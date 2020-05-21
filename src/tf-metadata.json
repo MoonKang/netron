@@ -8064,6 +8064,31 @@
     }
   },
   {
+    "name": "CompressElement",
+    "schema": {
+      "attributes": [
+        {
+          "minimum": 1,
+          "name": "input_types",
+          "type": "type[]"
+        }
+      ],
+      "inputs": [
+        {
+          "name": "components",
+          "typeListAttr": "input_types"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "compressed",
+          "type": 21
+        }
+      ],
+      "summary": "Compresses a dataset element."
+    }
+  },
+  {
     "name": "ComputeAccidentalHits",
     "schema": {
       "attributes": [
@@ -56163,6 +56188,36 @@
         }
       ],
       "summary": "Gradient of Unbatch."
+    }
+  },
+  {
+    "name": "UncompressElement",
+    "schema": {
+      "attributes": [
+        {
+          "minimum": 1,
+          "name": "output_types",
+          "type": "type[]"
+        },
+        {
+          "minimum": 1,
+          "name": "output_shapes",
+          "type": "shape[]"
+        }
+      ],
+      "inputs": [
+        {
+          "name": "compressed",
+          "type": 21
+        }
+      ],
+      "outputs": [
+        {
+          "name": "components",
+          "typeListAttr": "output_types"
+        }
+      ],
+      "summary": "Uncompresses a compressed dataset element."
     }
   },
   {
